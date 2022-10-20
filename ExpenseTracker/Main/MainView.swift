@@ -43,19 +43,7 @@ struct CardView: View {
 }
 
 struct MainView: View {
-    
-    
-    let addCardButton: Button<some View> = Button(action: {
-        
-    }, label: {
-        Text("+Card")
-            .padding(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
-            .font(.system(size: 16, weight: .semibold))
-            .background(.black)
-            .foregroundColor(.white)
-            .cornerRadius(5)
-    })
-        
+    @State var shouldPresentAddForm = false
     
     var body: some View {
         NavigationView {
@@ -72,8 +60,26 @@ struct MainView: View {
                 )
                 .frame(height: 280)
                 .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+                
+                
+                Spacer()
+                    .fullScreenCover(isPresented: $shouldPresentAddForm, onDismiss: nil) {
+                        Text("add card form")
+                    }
+                
+                
             }.navigationTitle("Home")
-                .navigationBarItems(trailing: addCardButton)
+                .navigationBarItems(trailing: Button(action: {
+                    self.shouldPresentAddForm.toggle()
+                    
+                }, label: {
+                    Text("+Card")
+                        .padding(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
+                        .font(.system(size: 16, weight: .semibold))
+                        .background(.black)
+                        .foregroundColor(.white)
+                        .cornerRadius(5)
+                }))
         }
     }
 }
