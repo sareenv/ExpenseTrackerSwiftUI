@@ -47,6 +47,21 @@ struct MainView: View {
     
     var body: some View {
         NavigationView {
+            
+            
+            let addCardButton: Button<some View> = Button(action: {
+                self.shouldPresentAddForm.toggle()
+                
+            }, label: {
+                Text("+Card")
+                    .padding(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
+                    .font(.system(size: 16, weight: .semibold))
+                    .background(.black)
+                    .foregroundColor(.white)
+                    .cornerRadius(5)
+            })
+            
+            
             ScrollView {
                 TabView {  
                     Group {
@@ -61,28 +76,31 @@ struct MainView: View {
                 .frame(height: 280)
                 .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
                 
+                // remove this screen
+                .onAppear{
+                    shouldPresentAddForm.toggle()
+                }
                 
                 Spacer()
                     .fullScreenCover(isPresented: $shouldPresentAddForm, onDismiss: nil) {
-                        Text("add card form")
+                        AddCardView()
+                        
                     }
                 
                 
             }.navigationTitle("Home")
-                .navigationBarItems(trailing: Button(action: {
-                    self.shouldPresentAddForm.toggle()
-                    
-                }, label: {
-                    Text("+Card")
-                        .padding(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
-                        .font(.system(size: 16, weight: .semibold))
-                        .background(.black)
-                        .foregroundColor(.white)
-                        .cornerRadius(5)
-                }))
+                .navigationBarItems(trailing: addCardButton)
         }
     }
 }
+
+
+
+
+
+
+
+
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {

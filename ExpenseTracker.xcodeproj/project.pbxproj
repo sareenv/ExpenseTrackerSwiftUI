@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		423898E729038DCC0072A4D0 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423898E629038DCC0072A4D0 /* AddCardView.swift */; };
 		426711E8290144BE003643FC /* ExpenseTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426711E7290144BE003643FC /* ExpenseTrackerApp.swift */; };
 		426711EA290144BE003643FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426711E9290144BE003643FC /* ContentView.swift */; };
 		426711EC290144C0003643FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 426711EB290144C0003643FC /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		423898E629038DCC0072A4D0 /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
 		426711E4290144BE003643FC /* ExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		426711E7290144BE003643FC /* ExpenseTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackerApp.swift; sourceTree = "<group>"; };
 		426711E9290144BE003643FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				426711FB29014562003643FC /* MainView.swift */,
+				423898E629038DCC0072A4D0 /* AddCardView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			files = (
 				426711FC29014562003643FC /* MainView.swift in Sources */,
 				426711F1290144C0003643FC /* Persistence.swift in Sources */,
+				423898E729038DCC0072A4D0 /* AddCardView.swift in Sources */,
 				426711EA290144BE003643FC /* ContentView.swift in Sources */,
 				426711E8290144BE003643FC /* ExpenseTrackerApp.swift in Sources */,
 				426711F4290144C0003643FC /* ExpenseTracker.xcdatamodeld in Sources */,
